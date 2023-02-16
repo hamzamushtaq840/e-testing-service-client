@@ -37,8 +37,6 @@ const QuizResult = React.lazy(() => import('./Components/Quiz/QuizResult'))
 const QuizAnswers = React.lazy(() => import('./Components/Quiz/QuizAnswers'))
 const QuizLog = React.lazy(() => import('./Components/Quiz/QuizLog'))
 
-
-
 function App() {
 
   const Loader =

@@ -79,6 +79,7 @@ const Navbar2 = (props) => {
     })
   }, [socket])
 
+  //FOR QUIZ TIME
   useEffect(() => {
     socket?.on('getQuizTime', data => {
       toast.success('You have a new notification', { position: toast.POSITION.TOP_RIGHT, });
@@ -141,7 +142,6 @@ const Navbar2 = (props) => {
 
   const handleNotification = () => {
     setTop(false)
-
     axios.post("http://localhost:5000/api/notificationRead", { withCredentials: true }, { headers: { Authorization: `Bearer ${cookies.token}` } }
     ).then((res) => {
       console.log(res);
@@ -150,8 +150,6 @@ const Navbar2 = (props) => {
       console.log(err);
     })
   }
-
-  console.log(breadcrumbs)
 
   return (
     <div className="Main">
@@ -276,7 +274,6 @@ const Navbar2 = (props) => {
             </div>
           </div>
         </div>
-
         <div className="hamza">
           {props.children}
         </div>

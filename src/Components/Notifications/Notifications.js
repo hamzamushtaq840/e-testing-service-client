@@ -28,7 +28,6 @@ const Notification = () => {
   }
 
   const fetchNotifications = () => {
-
     axios.get("http://localhost:5000/api/getNotification/" + user.userInfo.user.id, { withCredentials: true }, { headers: { Authorization: `Bearer ${cookie.token}` } }
     ).then((res) => {
       let newData = res.data.data.reverse()
@@ -42,9 +41,6 @@ const Notification = () => {
   useEffect(() => {
     fetchNotifications()
   }, [])
-
-
-
 
   return (
     <div className={styles.Main}>
@@ -65,8 +61,6 @@ const Notification = () => {
           </div>
         ))}
       </div>
-
-
     </div>
   );
 }
